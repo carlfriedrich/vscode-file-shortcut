@@ -1,6 +1,12 @@
 ###  File Shortcut
 
-By : [Ejabu](https://ejabu.github.io/)
+Based on: https://github.com/ejabu/vscode-file-shortcut
+
+Extended for use with local file paths in remote environments:
+
+```
+vscode-local:///C:/path/to/my.file
+```
 
 ## Features
 - Add your own favorite file list

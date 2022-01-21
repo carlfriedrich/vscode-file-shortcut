@@ -1,11 +1,11 @@
-import { commands, window, workspace, Position, Selection, TextDocument } from 'vscode';
+import { commands, window, workspace, Position, Selection, TextDocument, Uri } from 'vscode';
 import { getConf } from '../utils/config';
 
 
 export function showFileList() {
     return commands.registerCommand('fileShortcut.showFileList', async () => {
         var filePaths = getConf('list') as string[] || [];
-        if (!filePaths.length){
+        if (!filePaths.length) {
             window.showErrorMessage(`No config file found`);
             return
         }
@@ -31,7 +31,7 @@ async function showDocument(document: TextDocument) {
 async function openFile(filePath: string) {
     const fileName = filePath.split("/").pop()
     try {
-        const document = await workspace.openTextDocument(filePath);
+        const document = await workspace.openTextDocument(Uri.parse(filePath));
         showDocument(document)
         // window.showInformationMessage(`Success : ${filePath}`);
     } catch (error) {

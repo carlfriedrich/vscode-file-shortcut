@@ -7,9 +7,9 @@
         "type": "git",
         "url": "https://github.com/ejabu/vscode-file-shortcut"
     },
-    "publisher": "ejabudev",
-    "version": "0.3.0",
-    "enableProposedApi": false,
+    "publisher": "carlfriedrich",
+    "version": "0.3.1",
+    "enableApiProposals": false,
     "engines": {
         "vscode": "^1.25.0"
     },
@@ -18,7 +18,12 @@
         "Other"
     ],
     "activationEvents": [
-        "*"
+        "onFileSystem:file",
+        "onView:fs_list",
+        "onCommand:fileShortcut.showFileList",
+        "onCommand:fileShortcut.addCurrentFile",
+        "onCommand:fileShortcut.deleteFile",
+        "onCommand:fileShortcut.openFile"
     ],
     "main": "./out/extension.js",
     "contributes": {
